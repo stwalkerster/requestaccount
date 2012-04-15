@@ -15,4 +15,18 @@ $wgExtensionCredits['specialpage'][] = array(
 
 $directory = dirname( __FILE__ );
 
+// messages
+
 $wgExtensionMessagesFiles['RequestAccount'] = "$directory/RequestAccount.i18n.php";
+
+// Autoloader
+
+$wgAutoloadClasses['RequestAccountHooks'] = "$directory/RequestAccount.hooks.php";
+
+// special pages
+
+// rights
+
+// Hooks
+
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'RequestAccountHooks::schemaUpdates';
