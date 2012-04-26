@@ -43,10 +43,12 @@ class SpecialRequestAccount extends FormSpecialPage {
 	}
 
 	public function onSubmit( array $data ) {
-
+		return true;
 	}
 
 	public function onSuccess() {
-
+		$this->getOutput()->setPageTitle( wfMessage( 'requestaccount-confirmationmailsent-header' ) );
+		$this->getOutput()->addWikiMsg( 'requestaccount-confirmationmailsent' );
+		$this->getOutput()->returnToMain();
 	}
 }
