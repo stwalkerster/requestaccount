@@ -28,8 +28,24 @@ class SpecialAccountRequests extends SpecialPage {
 
 	private function showListPage() {
 		global $wgOut;
-
 		$wgOut->addHtml( wfMessage( 'requestaccount-requests-header' )->parse() );
+		$wgOut->addHtml( Xml::element( 'h2', array(), wfMessage( 'requestaccount-requests-open' )->parse() ) );
+
+		$this->listRequests( "Open" );
+
+		$wgOut->addHtml( Xml::element( 'h2', array(), wfMessage( 'requestaccount-requests-onhold' )->parse() ) );
+
+		$this->listRequests( "On Hold" );
+
+		$wgOut->addHtml( Xml::element( 'h2', array(), wfMessage( 'requestaccount-requests-checkuser' )->parse() ) );
+
+		$this->listRequests( "Checkuser" );
+	}
+
+	private function listRequests( $type="Open" ) {
+		global $wgOut;
+                $wgOut->addHtml( wfMessage( 'requestaccount-requests-empty' )->parse() );
 	}
 
 }
+

@@ -16,6 +16,12 @@ $messages['en'] = array(
 
 	// account requests content
 	'requestaccount-requests-header' => 'This page lists all the outstanding requests for accounts.',
+	'requestaccount-requests-open' => 'Open requests',
+	'requestaccount-requests-onhold' => 'On hold',
+	'requestaccount-requests-checkuser' => 'Awaiting CheckUser input',
+
+	'requestaccount-requests-empty' => ":''No requests at this time''",
+
 
 	// account request form content
 	'requestaccount-requestform-header' => 'request form header',
