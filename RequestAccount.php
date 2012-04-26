@@ -22,10 +22,19 @@ $wgExtensionMessagesFiles['RequestAccount'] = "$directory/RequestAccount.i18n.ph
 // Autoloader
 
 $wgAutoloadClasses['RequestAccountHooks'] = "$directory/RequestAccount.hooks.php";
+$wgAutoloadClasses['SpecialAccountRequests'] = "$directory/SpecialAccountRequests.php";
+$wgAutoloadClasses['SpecialRequestAccount'] = "$directory/SpecialRequestAccount.php";
 
 // special pages
 
+$wgSpecialPages['AccountRequests'] = 'SpecialAccountRequests';
+$wgSpecialPageGroups['AccountRequests'] = 'login';
+$wgSpecialPages['RequestAccount'] = 'SpecialRequestAccount';
+$wgSpecialPageGroups['RequestAccount'] = 'login';
+
 // rights
+
+$wgAvailableRights[] = 'requestaccount-view';
 
 // Hooks
 
