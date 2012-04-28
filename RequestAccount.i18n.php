@@ -22,6 +22,12 @@ $messages['en'] = array(
 
 	'requestaccount-requests-empty' => ":''No requests at this time''",
 
+	'requestaccount-requestlist-zoom' => 'Zoom',
+
+	'requestaccount-reserved' => 'Reserved by $1',
+	'requestaccount-notreserved' => 'Not reserved',
+
+	'requestaccount-zoom-header' => 'Request #$1 details',
 
 	// account request form content
 	'requestaccount-requestform-header' => 'request form header',
@@ -46,4 +52,7 @@ $messages['en'] = array(
 
 	'requestaccount-requestsubmitted' => "Many thanks for your interest in joining Wikipedia.\n\nYour request for an account has been received, and will be considered by a team of volunteers, usually within 24 hours.\n\nIf your account is created, you will receive an automated e-mail from wiki@wikimedia.org with your login credentials. You can use these to log in for the first time, where you will then be prompted to chose a new password.\n\nWhile you wait, you may find it useful to read through the 'getting started' section of our help pages. Of particular interest may be the Introduction to Wikipedia, which has some information to help you get up to speed with the way things work on Wikipedia.\n\nWe wish you all the best and hope you enjoy your time on Wikipedia.\n\nRegards, \n\nThe English Wikipedia Account Creation Team",
 	'requestaccount-requestsubmitted-header' => 'Request submitted!',
+
+	// errors
+	'requestaccount-error-emailnomatch' => 'Email addresses supplied do not match',
 );

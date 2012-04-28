@@ -43,6 +43,35 @@ class SpecialRequestAccount extends FormSpecialPage {
 	}
 
 	public function onSubmit( array $data ) {
+		global $wgRequest;
+
+		global $wgOut;
+
+		$dbw = wfGetDb( DB_MASTER );
+
+		if( $data[ 'RequestEmail' ] != $data[ 'RequestEmailConfirm' ] ) {
+			return array('requestaccount-error-emailnomatch');
+		}
+
+
+		$dbw->insert(
+			'requestaccount_request',
+			array(
+				'rar_name' => $data[ 'RequestName' ],
+				'rar_email' => $data[ 'RequestEmail' ],
+				'rar_email_authenticated' => '',
+				'rar_email_token' => '',
+				'rar_ip' => wfGetIP(),
+				'rar_comment' => $data[ 'RequestComment' ],
+				'rar_status' => 'Open',
+				'rar_date' => '',
+				'rar_reserved' => '0',
+				'rar_useragent' => $wgRequest->getHeader( 'User-Agent' ),
+				'rar_xff' => $wgRequest->getHeader( 'X-Forwarded-For' ),
+
+			)
+		);
+
 		return true;
 	}
 
